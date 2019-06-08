@@ -16,8 +16,13 @@ const forecast = (latitude, longitude, callback) => {
     } else {
       callback(
         undefined,
-        body.hourly.summary +
-          "It is currently " +
+        "High Temp is " +
+          body.daily.data[0].temperatureHigh +
+          " degrees, and the low temp is " +
+          body.daily.data[0].temperatureLow +
+          " degrees." +
+          body.hourly.summary +
+          " It is currently " +
           body.currently.temperature +
           " degrees out. there is a " +
           body.currently.precipProbability +
